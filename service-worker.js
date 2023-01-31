@@ -19,6 +19,20 @@ precacheAndRoute(WB_MANIFEST);
 
 cleanupOutdatedCaches();
 registerRoute(
+  /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
+  new CacheFirst({
+    cacheName: 'google-fonts',
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 4,
+        maxAgeSeconds: 31536e3,
+        purgeOnQuotaError: !0,
+      }),
+    ],
+  }),
+  'GET'
+);
+registerRoute(
   /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
   new NetworkOnly({
     cacheName: 'static-image-assets',

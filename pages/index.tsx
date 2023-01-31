@@ -2,41 +2,69 @@ import { useState } from "react";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  const [showGif, setShowGif] = useState(false);
+  const coffees = [
+    {
+      name: "Perspiciatis",
+      image: "images/coffee1.jpg",
+    },
+    {
+      name: "Voluptatem",
+      image: "images/coffee2.jpg",
+    },
+    {
+      name: "Explicabo",
+      image: "images/coffee3.jpg",
+    },
+    {
+      name: "Rchitecto",
+      image: "images/coffee4.jpg",
+    },
+    {
+      name: " Beatae",
+      image: "images/coffee5.jpg",
+    },
+    {
+      name: " Vitae",
+      image: "images/coffee6.jpg",
+    },
+    {
+      name: "Inventore",
+      image: "images/coffee7.jpg",
+    },
+    {
+      name: "Veritatis",
+      image: "images/coffee8.jpg",
+    },
+    {
+      name: "Accusantium",
+      image: "images/coffee9.jpg",
+    },
+  ];
 
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>Fim do Seminário PWA!</h1>
-
-        <p className={styles.description}>Obrigado pela atenção!</p>
-
-        <div className={styles.grid}>
-          <a className={styles.button} onClick={() => setShowGif(!showGif)}>
-            <p style={{fontSize: 20}}>Gif</p>
-          </a>
-        </div>
-        {showGif && (
-          <>
-            <div
-              style={{
-                width: "100%",
-                height: "0",
-                paddingBottom: "56%",
-                position: "relative",
-              }}
-            >
-              <img
-                src="https://media3.giphy.com/media/gG6OcTSRWaSis/giphy.gif?cid=790b7611b9ad38c5ecfe2903b5d2f5007e0cc7963db92632&rid=giphy.gif&ct=g"
-                width="100%"
-                height="100%"
-                style={{ position: "absolute" }}
-                className="giphy-embed"
-              />
+    <div className={styles.main}>
+      <main>
+        <nav>
+          <h1>Dev'Coffee</h1>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Blog</li>
+          </ul>
+        </nav>
+        <div className={styles.container}>
+          {coffees.map(({ name, image }) => (
+            <div className={styles.card}>
+              <img className={styles["card--avatar"]} src={image} />
+              <h1 className={styles["card--title"]}>{name}</h1>
+              <a className={styles["card--link"]} href="#">
+                Taste
+              </a>
             </div>
-          </>
-        )}
+          ))}
+        </div>
       </main>
+      <script src="js/app.js"></script>
     </div>
   );
 }

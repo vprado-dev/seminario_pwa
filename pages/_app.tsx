@@ -14,17 +14,17 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        <title>Seminário PWA</title>
+        <title>Dev'Coffee</title>
 
         <link rel="manifest" href="/manifest.json" />
         <link
-          href="/icons/icon-192x192.png"
+          href="images/icons/icon-192x192.png"
           rel="icon"
           type="image/png"
           sizes="192x192"
         />
         <link
-          href="/icons/icon-256x256.png"
+          href="images/icons/icon-256x256.png"
           rel="icon"
           type="image/png"
           sizes="256x256"
