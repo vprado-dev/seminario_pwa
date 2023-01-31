@@ -9,5 +9,6 @@ module.exports = withPWA({
     dest:"public",
     register:true,
     skipWaiting:true,
+    swSrc: "./src/service-worker.js"
   }
 })
